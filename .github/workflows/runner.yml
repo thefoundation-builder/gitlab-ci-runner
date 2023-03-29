@@ -1,4 +1,5 @@
 name: Gitlab Runner Service
+on: [repository_dispatch,push]
 jobs:
   build:
     runs-on: ubuntu-latest
