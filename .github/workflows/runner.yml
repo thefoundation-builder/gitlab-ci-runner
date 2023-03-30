@@ -22,7 +22,7 @@ jobs:
       - name: clean docker volume
         run: docker volume prune || true
       - name: Gitlab Runner
-        uses: TheFoundation/gitlab-runner-action@main
+        uses: edersonbrilhante/gitlab-runner-action@main
         with:
           registration-token: "${{ secrets.TOKEN }}"
           docker-image: "docker:19.03.12"
