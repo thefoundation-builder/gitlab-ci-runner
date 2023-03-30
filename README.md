@@ -1,5 +1,13 @@
-# gitlab-ci-runner
+gitlab-runner-in-github-action
+===
 
+This is a GitLab Runner in a GitHub Action , but as opposed to [the original version](https://dev.to/rikurouvila/how-to-trigger-a-github-action-with-an-htt-request-545) , this one uses a fixed TOKEN and uses the job_id as  changing parameter  ( so the gitlab runner runs with the tag "$job_id" )
+
+you could run this thingy with cron as well when changing build.yml
+
+
+## Usage
+Create a `TOKEN` github action Secret
 
 Example invocation in .gitlab-cy.yml ( see the attached .sh file ):
 
