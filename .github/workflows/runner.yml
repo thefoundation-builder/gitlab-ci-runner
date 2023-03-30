@@ -16,11 +16,11 @@ jobs:
     #      remove-haskell: 'true'
 
       - name: clean docker prune
-        run: docker system prune || true
+        run: docker system prune -f || true
       - name: clean docker rmi 
-        run: docker rmi $(docker images -aq) || true
+        run: docker rmi $(docker images -aq)    || true
       - name: clean docker volume
-        run: docker volume prune || true
+        run: docker volume prune -f  || true
       - name: Gitlab Runner
         uses: edersonbrilhante/gitlab-runner-action@main
         with:
