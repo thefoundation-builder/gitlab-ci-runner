@@ -15,11 +15,12 @@ jobs:
    #       remove-android: 'true'
     #      remove-haskell: 'true'
 
-      - name: clean docker
-        run:
-           - docker system prune
-           - docker rmi $(docker images -aq)
-           - docker volume prune
+      - name: clean docker prune
+        run: docker system prune || true
+      - name: clean docker rmi 
+        run: docker rmi $(docker images -aq) || true
+      - name: clean docker volume
+        run: docker volume prune || true
       - name: Gitlab Runner
         uses: TheFoundation/gitlab-runner-action@main
         with:
