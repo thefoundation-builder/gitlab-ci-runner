@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Maximize Build Space
-        uses: edersonbrilhante/gitlab-runner-action@master
+        uses: edersonbrilhante/gitlab-runner-action@main
         with:
           root-reserve-mb: 512
           swap-size-mb: 1024
