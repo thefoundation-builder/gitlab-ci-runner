@@ -6,15 +6,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Maximize Build Space
-        uses: edersonbrilhante/gitlab-runner-action@main
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
+#      - name: Maximize Build Space
+#        uses: edersonbrilhante/gitlab-runner-action@main
+#        with:
+ #         root-reserve-mb: 512
+ #         swap-size-mb: 1024
+  #        remove-dotnet: 'true'
+   #       remove-android: 'true'
+    #      remove-haskell: 'true'
 
+      - name: clean docker
+        script:
+           - docker system prune
+           - docker rmi $(docker images -aq)
+           - docker volume prune
       - name: Gitlab Runner
         uses: TheFoundation/gitlab-runner-action@main
         with:
