@@ -27,4 +27,4 @@ jobs:
           registration-token: "${{ secrets.TOKEN }}"
           docker-image: "docker:19.03.12"
           name: ${{ github.run_id }}
-          tag-list: [ "${{ github.event.client_payload.job_id }}" , "docker" , "linux" ]
+          tag-list: "${{ github.event.client_payload.job_id }},docker,linux"
